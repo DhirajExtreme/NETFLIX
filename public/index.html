@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DS PLIX — Your personal Netflix-style media streaming platform. Stream local files, network shares, and online content.">
+  <meta name="theme-color" content="#0a0a0f">
+  <title>DS PLIX — Personal Media Streaming</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Video.js -->
+  <link href="/vendor/video-js/video-js.min.css" rel="stylesheet">
+
+  <!-- App Styles -->
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Navbar -->
+    <nav id="navbar"></nav>
+
+    <!-- Main Content Area -->
+    <main id="main-content">
+      <div class="loading-screen" id="loading-screen">
+        <div class="loader-ring">
+          <div></div><div></div><div></div><div></div>
+        </div>
+        <p class="loader-text">Loading DS PLIX...</p>
+      </div>
+    </main>
+
+    <!-- Search Overlay -->
+    <div id="search-overlay" class="overlay hide">
+      <div class="search-overlay__inner">
+        <button class="search-overlay__close" id="search-close-btn" aria-label="Close search">&times;</button>
+        <div class="search-overlay__input-wrap">
+          <svg class="search-overlay__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input type="text" id="search-input" class="search-overlay__input" placeholder="Search movies, shows..." autocomplete="off">
+        </div>
+        <div id="search-results" class="search-overlay__results"></div>
+      </div>
+    </div>
+
+    <!-- Media Detail Modal -->
+    <div id="media-detail-modal" class="modal-overlay hide">
+      <div class="modal-content" id="media-detail-content"></div>
+    </div>
+
+    <!-- Player Overlay -->
+    <div id="player-overlay" class="player-overlay hide">
+      <div class="player-top-bar">
+        <button class="player-back-btn" id="player-back-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
+          <span>Back</span>
+        </button>
+        <span class="player-title" id="player-title"></span>
+        <button id="player-private-subtitle" class="btn btn--secondary" type="button" hidden>Subtitle file</button><input id="player-private-subtitle-file" type="file" accept=".srt,.vtt,text/vtt" hidden>
+      </div>
+      <div class="player-container">
+        <video id="video-player" class="video-js vjs-big-play-centered vjs-fluid"></video>
+      </div>
+    </div>
+
+    <!-- Settings Panel -->
+    <div id="settings-backdrop" class="settings-backdrop hide"></div>
+    <div id="settings-panel" class="settings-panel hide">
+      <div id="settings-content"></div>
+    </div>
+
+    <!-- Toast Notifications -->
+    <div id="notification-container" class="notification-container"></div>
+  </div>
+
+  <!-- Video.js -->
+  <script src="/vendor/video-js/video.min.js"></script>
+
+  <!-- App Scripts (order matters) -->
+  <script src="/js/api.js" defer></script>
+  <script src="/js/components/navbar.js" defer></script>
+  <script src="/js/components/hero.js" defer></script>
+  <script src="/js/components/carousel.js" defer></script>
+  <script src="/js/components/mediaCard.js" defer></script>
+  <script src="/js/components/mediaDetail.js" defer></script>
+  <script src="/js/components/player.js" defer></script>
+  <script src="/js/components/search.js" defer></script>
+  <script src="/js/components/settings.js" defer></script>
+  <script src="/js/components/sort.js" defer></script>
+  <script src="/js/app.js" defer></script>
+  <script src="/js/tv.js" defer></script>
+</body>
+</html>

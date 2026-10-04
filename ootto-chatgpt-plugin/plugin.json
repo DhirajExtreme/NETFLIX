@@ -1,0 +1,20 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "ootto-chatgpt-plugin",
+  "version": "0.1.0",
+  "description": "Private ChatGPT connection to Ootto's hosted MCP server for marketing content workflows.",
+  "homepage": "https://ootto.ai/",
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Ootto (private connection)",
+        "shortDescription": "Ootto marketing tools",
+        "longDescription": "Connect to Ootto's hosted MCP server. Sign in to Ootto when prompted to access the tools available to your account.",
+        "developerName": "Private connector",
+        "category": "Productivity",
+        "capabilities": ["Interactive"],
+        "defaultPrompt": "Connect to Ootto and show me the tools available to my account."
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+[scanner] Starting full scan of 2 source(s)
+[scanner] Scanning source "Drive1_2"
+[scanner] Indexed 1226 file(s) from "Drive1_2"
+[scanner] Scanning source "Drive1_1"
+[scanner] Indexed 690 file(s) from "Drive1_1"
+[scanner] Full scan complete. Processed 1916/1916 files
+{"finished":true,"processed":1916,"total":1916,"errorCount":0,"sampleErrors":[]}
